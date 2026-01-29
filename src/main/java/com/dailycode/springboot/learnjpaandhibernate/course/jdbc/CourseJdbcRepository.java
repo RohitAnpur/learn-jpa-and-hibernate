@@ -22,9 +22,9 @@ public class CourseJdbcRepository {
 			delete from course where id = ?;
 			""";
 
-	private static String SELECT_QUERY = """
-			select * from course;
-			""";
+	/*
+	 * private static String SELECT_QUERY = """ select * from course; """;
+	 */
 
 	private static String SELECT_QUERY_BY_ID = """
 			select * from course where id = ?;

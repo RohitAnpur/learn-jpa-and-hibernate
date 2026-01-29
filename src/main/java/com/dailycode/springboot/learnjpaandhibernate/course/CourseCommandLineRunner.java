@@ -1,16 +1,21 @@
-package com.dailycode.springboot.learnjpaandhibernate.course.jdbc;
+package com.dailycode.springboot.learnjpaandhibernate.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.dailycode.springboot.learnjpaandhibernate.course.Course;
+import com.dailycode.springboot.learnjpaandhibernate.course.jpa.CourseJpaRepository;
 
 @Component
-public class CourseJdbcCommandLineRunner implements CommandLineRunner{
+public class CourseCommandLineRunner implements CommandLineRunner{
 
+	/*
+	 * @Autowired CourseJdbcRepository repository;
+	 */
+	
 	@Autowired
-	CourseJdbcRepository repository;
+	CourseJpaRepository repository;
+	
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -20,6 +25,7 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 		repository.insert(new Course(3,"Learn GCP Now","Daily Code"));
 		
 		repository.deleteById(1);
+		
 		System.out.println(repository.findById(2));
 		System.out.println(repository.findById(3));
 		
