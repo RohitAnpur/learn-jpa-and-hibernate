@@ -28,10 +28,27 @@ public class CourseCommandLineRunner implements CommandLineRunner{
 		repository.save(new Course(2,"Learn Azure Now","Daily Code"));
 		repository.save(new Course(3,"Learn GCP Now","Daily Code"));
 		
+		System.out.println("DELETE BY ID: ");
 		repository.deleteById(1L);
 		
+		System.out.println("FIND BY ID: ");
 		System.out.println(repository.findById(2L));
 		System.out.println(repository.findById(3L));
+		System.out.println("FIND ALL:");
+		System.out.println(repository.findAll());
+		
+		System.out.println(repository.count());
+		
+		System.out.println("FIND BY AUTHOR NAME:");
+		System.out.println(repository.findByAuthor(null));
+		System.out.println(repository.findByAuthor("Daily Code"));
+		
+		System.out.println("FIND BY COURSE NAME:");
+		System.out.println(repository.findByName("Learn AWS Now"));
+		System.out.println(repository.findByName("Learn Azure Now"));
+		System.out.println(repository.findByName(null));
+		
+		
 		
 	}
 	
