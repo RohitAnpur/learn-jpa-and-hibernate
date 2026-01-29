@@ -1,4 +1,4 @@
-package com.dailycode.springboot.learn_jpa_and_hibernate;
+package com.dailycode.springboot.learnjpaandhibernate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
